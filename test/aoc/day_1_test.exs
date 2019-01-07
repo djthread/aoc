@@ -3,23 +3,19 @@ defmodule Aoc.Day1Test do
   alias Aoc.Day1
   doctest Aoc
 
-  test "win" do
-    answer =
-      [File.cwd!(), "test", "fixtures", "day-1.txt"]
-      |> Path.join()
-      |> File.read!()
-      |> Day1.run()
+  @answer 595
 
-    assert 595 == answer
+  test "win" do
+    assert @answer == data() |> Day1.run()
   end
 
   test "win again" do
-    answer =
-      [File.cwd!(), "test", "fixtures", "day-1.txt"]
-      |> Path.join()
-      |> File.read!()
-      |> Day1.run2()
+    assert @answer == data() |> Day1.run2()
+  end
 
-    assert 595 == answer
+  defp data do
+    [File.cwd!(), "test", "fixtures", "day-1.txt"]
+    |> Path.join()
+    |> File.read!()
   end
 end

@@ -10,7 +10,7 @@ defmodule Aoc.Day1 do
           acc + int
 
         bad ->
-          Logger.error "Bad input: #{inspect bad}"
+          raise "Bad input: #{inspect(bad)}"
         end
     end)
   end
@@ -24,8 +24,7 @@ defmodule Aoc.Day1 do
           int
 
         bad ->
-          Logger.error "Bad input: #{inspect bad}"
-          0
+          raise "Bad input: #{inspect(bad)}"
         end
     end)
     |> Enum.sum()
