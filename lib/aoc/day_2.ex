@@ -10,16 +10,13 @@ defmodule Aoc.Day2 do
   def match2(str) do
     str
     |> String.split("\n")
-    |> Enum.filter(fn word -> (
-      # match letter 'm'
-      Regex.run('-r/m/', word)
-      # matches 'm' twice
-      # Regex.run('-r/m{2}}/', word)
-      # todo: check all characters [a..z]
-      # Regex.run('-r/[a..z]{2}}/', word)
-    )
-    |> Enum.sum()
+    |> Enum.reduce({0, 0}, fn word, {two_occurrences, three_occurrences} ->
+      {x, y} = evaluate_word(word)
+      {two_occurrences + x, three_occurrences + y}
     end)
   end
 
+  defp evaluate_word(word) do
+
+  end
 end
