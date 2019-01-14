@@ -1,4 +1,5 @@
 defmodule Aoc.Day1 do
+  @moduledoc false
   require Logger
 
   def run(str) do
@@ -11,7 +12,7 @@ defmodule Aoc.Day1 do
 
         bad ->
           raise "Bad input: #{inspect(bad)}"
-        end
+      end
     end)
   end
 
@@ -25,7 +26,7 @@ defmodule Aoc.Day1 do
 
         bad ->
           raise "Bad input: #{inspect(bad)}"
-        end
+      end
     end)
     |> Enum.sum()
   end

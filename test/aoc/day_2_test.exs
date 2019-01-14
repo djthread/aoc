@@ -3,7 +3,7 @@ defmodule Aoc.Day2Test do
   alias Aoc.Day2
   doctest Aoc
 
-  @answer 595
+  @answer 5478
 
   test "win" do
     assert @answer == data() |> Day2.run()
